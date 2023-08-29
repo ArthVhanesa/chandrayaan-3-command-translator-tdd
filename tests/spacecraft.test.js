@@ -105,4 +105,64 @@ describe("Backward movement testing", () => {
       direction: "N",
     });
   });
+
+  test("Move backward with South", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "S");
+    spacecraft.moveBackward();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 1,
+      z: 0,
+      direction: "S",
+    });
+  });
+
+  test("Move backward with West", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "W");
+    spacecraft.moveBackward();
+
+    expect(spacecraft).toEqual({
+      x: 1,
+      y: 0,
+      z: 0,
+      direction: "W",
+    });
+  });
+
+  test("Move backward with East", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "E");
+    spacecraft.moveBackward();
+
+    expect(spacecraft).toEqual({
+      x: -1,
+      y: 0,
+      z: 0,
+      direction: "E",
+    });
+  });
+
+  test("Move backward with Up", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "U");
+    spacecraft.moveBackward();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: -1,
+      direction: "U",
+    });
+  });
+
+  test("Move backward with Down", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "D");
+    spacecraft.moveBackward();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: 1,
+      direction: "D",
+    });
+  });
 });
