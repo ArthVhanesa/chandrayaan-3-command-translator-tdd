@@ -111,6 +111,12 @@ class Spacecraft {
       this.direction = "U";
     }
   }
+
+  turnDown() {
+    if (this.direction != "D") {
+      this.direction = "D";
+    }
+  }
 }
 
 module.exports = { Spacecraft };
