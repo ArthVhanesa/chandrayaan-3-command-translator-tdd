@@ -166,3 +166,17 @@ describe("Backward movement testing", () => {
     });
   });
 });
+
+describe("Turn left testing", () => {
+  test("Move left with North", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "N");
+    spacecraft.turnLeft();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: 0,
+      direction: "W",
+    });
+  });
+});
