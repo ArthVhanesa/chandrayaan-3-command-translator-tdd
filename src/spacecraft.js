@@ -6,6 +6,10 @@ class Spacecraft {
     this.direction = direction;
   }
 
+  position() {
+    return { x: this.x, y: this.y, z: this.z, direction: this.direction };
+  }
+
   moveForward() {
     switch (this.direction) {
       case "N":

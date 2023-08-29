@@ -4,13 +4,13 @@ describe("Basic initialization testing", () => {
   test("Initialize spacecraft", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
 
-    expect(spacecraft).toBeDefined();
+    expect(spacecraft.position()).toBeDefined();
   });
 
   test("Initialize spacecraft with values", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -24,7 +24,7 @@ describe("Forward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.moveForward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 1,
       z: 0,
@@ -36,7 +36,7 @@ describe("Forward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "S");
     spacecraft.moveForward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: -1,
       z: 0,
@@ -48,7 +48,7 @@ describe("Forward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "E");
     spacecraft.moveForward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 1,
       y: 0,
       z: 0,
@@ -60,7 +60,7 @@ describe("Forward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "W");
     spacecraft.moveForward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: -1,
       y: 0,
       z: 0,
@@ -72,7 +72,7 @@ describe("Forward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "U");
     spacecraft.moveForward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 1,
@@ -84,7 +84,7 @@ describe("Forward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "D");
     spacecraft.moveForward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: -1,
@@ -98,7 +98,7 @@ describe("Backward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.moveBackward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: -1,
       z: 0,
@@ -110,7 +110,7 @@ describe("Backward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "S");
     spacecraft.moveBackward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 1,
       z: 0,
@@ -122,7 +122,7 @@ describe("Backward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "W");
     spacecraft.moveBackward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 1,
       y: 0,
       z: 0,
@@ -134,7 +134,7 @@ describe("Backward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "E");
     spacecraft.moveBackward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: -1,
       y: 0,
       z: 0,
@@ -146,7 +146,7 @@ describe("Backward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "U");
     spacecraft.moveBackward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: -1,
@@ -158,7 +158,7 @@ describe("Backward movement testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "D");
     spacecraft.moveBackward();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 1,
@@ -172,7 +172,7 @@ describe("Turn left testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.turnLeft();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -184,7 +184,7 @@ describe("Turn left testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "S");
     spacecraft.turnLeft();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -196,7 +196,7 @@ describe("Turn left testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "E");
     spacecraft.turnLeft();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -208,7 +208,7 @@ describe("Turn left testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "W");
     spacecraft.turnLeft();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -220,7 +220,7 @@ describe("Turn left testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "U");
     spacecraft.turnLeft();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -232,7 +232,7 @@ describe("Turn left testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "D");
     spacecraft.turnLeft();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -246,7 +246,7 @@ describe("Turn right testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.turnRight();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -258,7 +258,7 @@ describe("Turn right testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "S");
     spacecraft.turnRight();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -270,7 +270,7 @@ describe("Turn right testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "E");
     spacecraft.turnRight();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -282,7 +282,7 @@ describe("Turn right testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "W");
     spacecraft.turnRight();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -294,7 +294,7 @@ describe("Turn right testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "U");
     spacecraft.turnRight();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -306,7 +306,7 @@ describe("Turn right testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "D");
     spacecraft.turnRight();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -320,7 +320,7 @@ describe("Move upwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.turnUp();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -332,7 +332,7 @@ describe("Move upwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "S");
     spacecraft.turnUp();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -344,7 +344,7 @@ describe("Move upwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "E");
     spacecraft.turnUp();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -356,7 +356,7 @@ describe("Move upwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "W");
     spacecraft.turnUp();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -368,7 +368,7 @@ describe("Move upwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "U");
     spacecraft.turnUp();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -380,7 +380,7 @@ describe("Move upwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "D");
     spacecraft.turnUp();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -394,7 +394,7 @@ describe("Move Downwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.turnDown();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -406,7 +406,7 @@ describe("Move Downwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "S");
     spacecraft.turnDown();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -418,7 +418,7 @@ describe("Move Downwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "E");
     spacecraft.turnDown();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -430,7 +430,7 @@ describe("Move Downwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "W");
     spacecraft.turnDown();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -442,7 +442,7 @@ describe("Move Downwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "U");
     spacecraft.turnDown();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -454,7 +454,7 @@ describe("Move Downwards testing", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "D");
     spacecraft.turnDown();
 
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 0,
       z: 0,
@@ -467,7 +467,7 @@ describe("Spacecraft translate command test", () => {
   test("Translate command 1", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.translateCommands(["f", "r", "u", "b", "l"]);
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: 1,
       z: -1,
@@ -478,7 +478,7 @@ describe("Spacecraft translate command test", () => {
   test("Translate command 2", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.translateCommands(["f", "r", "u", "b", "l", "b", "b", "d", "l"]);
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: -1,
       z: -1,
@@ -489,7 +489,7 @@ describe("Spacecraft translate command test", () => {
   test("Translate command 3", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.translateCommands(["f", "r", "u", "b", "l", "b", "b"]);
-    expect(spacecraft).toEqual({
+    expect(spacecraft.position()).toEqual({
       x: 0,
       y: -1,
       z: -1,
