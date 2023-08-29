@@ -80,3 +80,17 @@ describe("Forward movement testing", () => {
     });
   });
 });
+
+describe("Backward movement testing", () => {
+  test("Move backward with North", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "N");
+    spacecraft.moveBackward();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: -1,
+      z: 0,
+      direction: "N",
+    });
+  });
+});
