@@ -55,6 +55,16 @@ class Spacecraft {
         break;
     }
   }
+
+  turnLeft() {
+    switch (this.direction) {
+      case "N":
+        this.direction = "W";
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 module.exports = { Spacecraft };
