@@ -50,28 +50,17 @@ class Spacecraft {
   }
 
   turnRight() {
-    switch (this.direction) {
-      case "N":
-        this.direction = "E";
-        break;
-      case "S":
-        this.direction = "W";
-        break;
-      case "E":
-        this.direction = "S";
-        break;
-      case "W":
-        this.direction = "N";
-        break;
-      case "U":
-        this.direction = "S";
-        break;
-      case "D":
-        this.direction = "N";
-        break;
-      default:
-        break;
+    if (this.direction === "U" || this.direction === "D") {
+      const directions = {
+        U: "S",
+        D: "N",
+      };
+      this.direction = directions[this.direction];
+      return;
     }
+    const currentIdx = this.directions.indexOf(this.direction);
+    const nextIdx = (currentIdx + 1) % this.directions.length;
+    this.direction = this.directions[nextIdx];
   }
 
   turnUp() {
