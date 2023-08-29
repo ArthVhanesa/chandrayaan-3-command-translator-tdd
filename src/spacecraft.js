@@ -5,6 +5,16 @@ class Spacecraft {
     this.z = z;
     this.direction = direction;
   }
+
+  moveForward() {
+    switch (this.direction) {
+      case "N":
+        this.y += 1;
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 module.exports = { Spacecraft };
