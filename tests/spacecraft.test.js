@@ -56,6 +56,18 @@ describe("Forward movement testing", () => {
     });
   });
 
+  test("Move forward with West", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "W");
+    spacecraft.moveForward();
+
+    expect(spacecraft).toEqual({
+      x: -1,
+      y: 0,
+      z: 0,
+      direction: "W",
+    });
+  });
+
   test("Move forward with Up", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "U");
     spacecraft.moveForward();
