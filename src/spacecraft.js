@@ -105,6 +105,12 @@ class Spacecraft {
         break;
     }
   }
+
+  turnUp() {
+    if (this.direction != "U") {
+      this.direction = "U";
+    }
+  }
 }
 
 module.exports = { Spacecraft };
