@@ -13,6 +13,8 @@ class Spacecraft {
       U: { x: 0, y: 0, z: 1 },
       D: { x: 0, y: 0, z: -1 },
     };
+
+    this.directions = ["N", "E", "S", "W"];
   }
 
   position() {
@@ -34,28 +36,17 @@ class Spacecraft {
   }
 
   turnLeft() {
-    switch (this.direction) {
-      case "N":
-        this.direction = "W";
-        break;
-      case "S":
-        this.direction = "E";
-        break;
-      case "E":
-        this.direction = "N";
-        break;
-      case "W":
-        this.direction = "S";
-        break;
-      case "U":
-        this.direction = "N";
-        break;
-      case "D":
-        this.direction = "S";
-        break;
-      default:
-        break;
+    if (this.direction === "U" || this.direction === "D") {
+      const directions = {
+        U: "N",
+        D: "S",
+      };
+      this.direction = directions[this.direction];
+      return;
     }
+    const currentIdx = this.directions.indexOf(this.direction);
+    const nextIdx = (currentIdx + 3) % this.directions.length;
+    this.direction = this.directions[nextIdx];
   }
 
   turnRight() {
