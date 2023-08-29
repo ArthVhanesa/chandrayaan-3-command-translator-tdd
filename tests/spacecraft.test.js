@@ -464,12 +464,34 @@ describe("Move Downwards testing", () => {
 });
 
 describe("Spacecraft translate command test", () => {
-  test("Translate command", () => {
+  test("Translate command 1", () => {
     const spacecraft = new Spacecraft(0, 0, 0, "N");
     spacecraft.translateCommands(["f", "r", "u", "b", "l"]);
     expect(spacecraft).toEqual({
       x: 0,
       y: 1,
+      z: -1,
+      direction: "N",
+    });
+  });
+
+  test("Translate command 2", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "N");
+    spacecraft.translateCommands(["f", "r", "u", "b", "l", "b", "b", "d", "l"]);
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: -1,
+      z: -1,
+      direction: "S",
+    });
+  });
+
+  test("Translate command 3", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "N");
+    spacecraft.translateCommands(["f", "r", "u", "b", "l", "b", "b"]);
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: -1,
       z: -1,
       direction: "N",
     });
