@@ -30,6 +30,16 @@ class Spacecraft {
         break;
     }
   }
+
+  moveBackward() {
+    switch (this.direction) {
+      case "N":
+        this.y -= 1;
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 module.exports = { Spacecraft };
