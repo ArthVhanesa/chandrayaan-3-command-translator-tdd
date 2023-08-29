@@ -4,6 +4,15 @@ class Spacecraft {
     this.y = y;
     this.z = z;
     this.direction = direction;
+
+    this.directionMappings = {
+      N: { x: 0, y: 1, z: 0 },
+      S: { x: 0, y: -1, z: 0 },
+      E: { x: 1, y: 0, z: 0 },
+      W: { x: -1, y: 0, z: 0 },
+      U: { x: 0, y: 0, z: 1 },
+      D: { x: 0, y: 0, z: -1 },
+    };
   }
 
   position() {
@@ -11,28 +20,10 @@ class Spacecraft {
   }
 
   moveForward() {
-    switch (this.direction) {
-      case "N":
-        this.y += 1;
-        break;
-      case "S":
-        this.y -= 1;
-        break;
-      case "E":
-        this.x += 1;
-        break;
-      case "W":
-        this.x -= 1;
-        break;
-      case "U":
-        this.z += 1;
-        break;
-      case "D":
-        this.z -= 1;
-        break;
-      default:
-        break;
-    }
+    const { x, y, z } = this.directionMappings[this.direction];
+    this.x += x;
+    this.y += y;
+    this.z += z;
   }
 
   moveBackward() {
