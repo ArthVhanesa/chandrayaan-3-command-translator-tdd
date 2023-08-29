@@ -36,6 +36,21 @@ class Spacecraft {
       case "N":
         this.y -= 1;
         break;
+      case "S":
+        this.y += 1;
+        break;
+      case "E":
+        this.x -= 1;
+        break;
+      case "W":
+        this.x += 1;
+        break;
+      case "U":
+        this.z -= 1;
+        break;
+      case "D":
+        this.z += 1;
+        break;
       default:
         break;
     }
