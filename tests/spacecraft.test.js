@@ -388,3 +388,77 @@ describe("Move upwards testing", () => {
     });
   });
 });
+
+describe("Move Downwards testing", () => {
+  test("Move Downwards with North", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "N");
+    spacecraft.turnDown();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: 0,
+      direction: "D",
+    });
+  });
+
+  test("Move Downwards with South", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "S");
+    spacecraft.turnDown();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: 0,
+      direction: "D",
+    });
+  });
+
+  test("Move Downwards with East", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "E");
+    spacecraft.turnDown();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: 0,
+      direction: "D",
+    });
+  });
+
+  test("Move Downwards with Waste", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "W");
+    spacecraft.turnDown();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: 0,
+      direction: "D",
+    });
+  });
+
+  test("Move Downwards with Up", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "U");
+    spacecraft.turnDown();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: 0,
+      direction: "D",
+    });
+  });
+
+  test("Move Downwards with Down", () => {
+    const spacecraft = new Spacecraft(0, 0, 0, "D");
+    spacecraft.turnDown();
+
+    expect(spacecraft).toEqual({
+      x: 0,
+      y: 0,
+      z: 0,
+      direction: "D",
+    });
+  });
+});
