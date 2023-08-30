@@ -32,7 +32,6 @@ describe("Turn left testing", () => {
       } else {
         const currentIdx = directions.indexOf(testCase.direction);
         const nextIdx = (currentIdx + 3) % directions.length;
-        console.log("nextIdx", nextIdx);
         expectedDirection = directions[nextIdx];
       }
 
