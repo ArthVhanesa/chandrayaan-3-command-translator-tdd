@@ -12,6 +12,8 @@ The spacecraft navigates through the galaxy using galactic coordinates (x for ea
    - [Installation](#installation)
 3. [Testing](#testing)
 4. [Contributing](#contributing)
+5. [License](#License)
+6. [Author](#Author)
 
 ## Features
 - Move the spacecraft forward or backwards (f, b): The spacecraft moves one step forward or backwards based on its current direction.
@@ -27,22 +29,22 @@ Follow these instructions to get the program up and running.
 
 ### Installation
 1. Clone the repository to your local machine:
-    ```
+    ```bash
     git clone https://github.com/ArthVhanesa/chandrayaan-3-command-translator-tdd.git
     ```
 2. Navigate to the project directory:
-   ```
+   ```bash
    cd chandrayaan-3-command-translator-tdd
    ```
 3. Install the required dependencies:
-   ```
+   ```bash
    npm ci
    ```
    Please use `npm ci` to avoid unnecessary changes in `package-lock.json`.
 
 ## Testing
 This project uses [Jest](https://jestjs.io/) for testing. To run the tests, execute the following command:
-```
+```bash
 npm test
 ```
 The test suite will ensure the spacecraft's navigation and orientation functions work correctly.
@@ -53,12 +55,18 @@ Contributions to this project are welcome! If you have any suggestions, or bug r
 1. Fork the repository on GitHub.
 2. Clone your forked repository to your local machine.
 3. Create a new branch for your feature or bug fix:
-    ```
+    ```bash
     git checkout -b ＜new-branch-name＞
     ```
 4. Make your changes and commit them with clear, concise commit messages.
 5. Push your changes to your fork on GitHub:
-   ```
+   ```bash
    git push origin ＜new-branch-name＞
    ```
 6. Create a pull request from your fork to the main repository on GitHub.
+
+## License
+This project is licensed under the [MIT License](LICENSE).
+
+## Author
+- [Arth Vhanesa](https://github.com/ArthVhanesa)
