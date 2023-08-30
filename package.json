@@ -4,7 +4,7 @@
   "description": "Develop a program that translates commands sent from Earth into instructions understood by the spacecraft.",
   "main": "index.js",
   "scripts": {
-    "test": "jest --watch"
+    "test": "jest"
   },
   "author": "Arth Vhanesa",
   "license": "ISC",
