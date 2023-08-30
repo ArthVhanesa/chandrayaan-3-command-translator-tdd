@@ -36,39 +36,46 @@ describe("Basic initialization testing", () => {
 });
 
 describe("Spacecraft translate command test", () => {
-  test("Translate command 1", () => {
-    // Arrange
-    const spacecraft = new Spacecraft(0, 0, 0, "N");
-    // Act
-    spacecraft.translateCommands(["f", "r", "u", "b", "l"]);
-    // Assert
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: 1,
-      z: -1,
-      direction: "N",
-    });
-  });
+  const testCases = [
+    {
+      currentPosition: { x: 0, y: 0, z: 0, direction: "N" },
+      commands: [],
+      expectedPosition: { x: 0, y: 0, z: 0, direction: "N" },
+    },
+    {
+      currentPosition: { x: 0, y: 0, z: 0, direction: "N" },
+      commands: ["f", "r", "u", "b", "l"],
+      expectedPosition: { x: 0, y: 1, z: -1, direction: "N" },
+    },
+    {
+      currentPosition: { x: 0, y: 0, z: 0, direction: "N" },
+      commands: ["f", "r", "u", "b", "l", "b", "b", "d", "l"],
+      expectedPosition: { x: 0, y: -1, z: -1, direction: "S" },
+    },
+    {
+      currentPosition: { x: 0, y: 0, z: 0, direction: "N" },
+      commands: ["f", "r", "u", "b", "l", "b", "b"],
+      expectedPosition: { x: 0, y: -1, z: -1, direction: "N" },
+    },
+  ];
 
-  test("Translate command 2", () => {
-    const spacecraft = new Spacecraft(0, 0, 0, "N");
-    spacecraft.translateCommands(["f", "r", "u", "b", "l", "b", "b", "d", "l"]);
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: -1,
-      z: -1,
-      direction: "S",
-    });
-  });
+  for (const testCase of testCases) {
+    test(`Translate commands ${testCase.commands}`, () => {
+      const spacecraft = new Spacecraft(
+        testCase.currentPosition.x,
+        testCase.currentPosition.y,
+        testCase.currentPosition.z,
+        testCase.currentPosition.direction
+      );
 
-  test("Translate command 3", () => {
-    const spacecraft = new Spacecraft(0, 0, 0, "N");
-    spacecraft.translateCommands(["f", "r", "u", "b", "l", "b", "b"]);
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: -1,
-      z: -1,
-      direction: "N",
+      spacecraft.translateCommands(testCase.commands);
+
+      expect(spacecraft.position()).toEqual({
+        x: testCase.expectedPosition.x,
+        y: testCase.expectedPosition.y,
+        z: testCase.expectedPosition.z,
+        direction: testCase.expectedPosition.direction,
+      });
     });
-  });
+  }
 });

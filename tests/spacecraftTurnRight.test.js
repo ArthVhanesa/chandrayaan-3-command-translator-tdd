@@ -1,75 +1,47 @@
 const { Spacecraft } = require("../src/spacecraft");
 
 describe("Turn right testing", () => {
-  test("Move right with North", () => {
-    const spacecraft = new Spacecraft(0, 0, 0, "N");
-    spacecraft.turnRight();
+  const testCases = [
+    { x: 0, y: 0, z: 0, direction: "N" },
+    { x: 0, y: 0, z: 0, direction: "S" },
+    { x: 0, y: 0, z: 0, direction: "W" },
+    { x: 0, y: 0, z: 0, direction: "E" },
+    { x: 0, y: 0, z: 0, direction: "U" },
+    { x: 0, y: 0, z: 0, direction: "D" },
+  ];
 
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: 0,
-      z: 0,
-      direction: "E",
+  for (const testCase of testCases) {
+    test(`Turn Right with direction ${testCase.direction}`, () => {
+      const spacecraft = new Spacecraft(
+        testCase.x,
+        testCase.y,
+        testCase.z,
+        testCase.direction
+      );
+      spacecraft.turnRight();
+
+      var directions = ["N", "E", "S", "W"];
+      var expectedDirection = "";
+
+      if (testCase.direction === "U" || testCase.direction === "D") {
+        const directions = {
+          U: "S",
+          D: "N",
+        };
+        expectedDirection = directions[testCase.direction];
+      } else {
+        const currentIdx = directions.indexOf(testCase.direction);
+        const nextIdx = (currentIdx + 1) % directions.length;
+        console.log("nextIdx", nextIdx);
+        expectedDirection = directions[nextIdx];
+      }
+
+      expect(spacecraft.position()).toEqual({
+        x: testCase.x,
+        y: testCase.y,
+        z: testCase.z,
+        direction: expectedDirection,
+      });
     });
-  });
-
-  test("Move right with South", () => {
-    const spacecraft = new Spacecraft(0, 0, 0, "S");
-    spacecraft.turnRight();
-
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: 0,
-      z: 0,
-      direction: "W",
-    });
-  });
-
-  test("Move right with East", () => {
-    const spacecraft = new Spacecraft(0, 0, 0, "E");
-    spacecraft.turnRight();
-
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: 0,
-      z: 0,
-      direction: "S",
-    });
-  });
-
-  test("Move right with West", () => {
-    const spacecraft = new Spacecraft(0, 0, 0, "W");
-    spacecraft.turnRight();
-
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: 0,
-      z: 0,
-      direction: "N",
-    });
-  });
-
-  test("Move right with Up", () => {
-    const spacecraft = new Spacecraft(0, 0, 0, "U");
-    spacecraft.turnRight();
-
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: 0,
-      z: 0,
-      direction: "S",
-    });
-  });
-
-  test("Move right with Down", () => {
-    const spacecraft = new Spacecraft(0, 0, 0, "D");
-    spacecraft.turnRight();
-
-    expect(spacecraft.position()).toEqual({
-      x: 0,
-      y: 0,
-      z: 0,
-      direction: "N",
-    });
-  });
+  }
 });
